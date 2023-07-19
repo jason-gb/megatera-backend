@@ -2,9 +2,11 @@
 
 ### TCP/IP 통신
 
-> [인터넷\_프로토콜\_스위트](https://ko.wikipedia.org/wiki/%EC%9D%B8%ED%84%B0%EB%84%B7\_%ED%94%84%EB%A1%9C%ED%86%A0%EC%BD%9C\_%EC%8A%A4%EC%9C%84%ED%8A%B8)
+tcp/ip 위에 http가 형성됨
 
-> [전송\_계층](https://ko.wikipedia.org/wiki/%EC%A0%84%EC%86%A1\_%EA%B3%84%EC%B8%B5)
+> [인터넷\_프로토콜\_스위트](https://ko.wikipedia.org/wiki/%EC%9D%B8%ED%84%B0%EB%84%B7\_%ED%94%84%EB%A1%9C%ED%86%A0%EC%BD%9C\_%EC%8A%A4%EC%9C%84%ED%8A%B8)  그 중 tcp , ip가 제일 많이 사용됨
+
+> [전송\_계층](https://ko.wikipedia.org/wiki/%EC%A0%84%EC%86%A1\_%EA%B3%84%EC%B8%B5) tcp , udp가 제일 유명함
 
 #### TCP와 UDP
 
@@ -18,7 +20,9 @@
 * [Berkeley\_sockets](https://en.wikipedia.org/wiki/Berkeley\_sockets)
 * [네트워크\_소켓](https://ko.wikipedia.org/wiki/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC\_%EC%86%8C%EC%BC%93)
 
-Socket과 Socket API를 구분해야 헷갈리지 않는다.
+Socket과 Socket API를 구분해야 헷갈리지 않는다. (비트코인은 프로토콜 이지만 그 안에서 사용되는 화폐도 비트코인이다.)
+
+socket 은 엔드포인트 , 서버와 클라이언트의 종착점이다. 둘이 연결되어서 어떻게 통신하는지를 프로그래밍하는게 socket api 를 사용하는 것.
 
 Socket은 기본적으로 파일과 유사하게 다룰 수 있다(유닉스에서는 파일 디스크립터의 일종).
 
