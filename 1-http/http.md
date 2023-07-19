@@ -1,4 +1,4 @@
-# HTTP의 이해
+# HTTP의 이해
 
 **프로토콜 -> 규칙의 집합, 규약, 약속**
 
@@ -28,34 +28,35 @@
       url뒤에 session\_000을 붙여서 주기도 했음
    3. 웹 브라우저의 기능 (localStorage 등) : 클라이언트가 독자적으로 관리
 
-#### HTTP 메시지
+#### HTTP 메시지(트랜잭션)
 
 결과적으로 이 http메세지를 잘 주고 받는것이 중요하다.
 
-1. 기본적으로는 사람이 읽을 수 있는 형태
-2. 요청과 응답 모두 동일 구조
+1. 기본적으로는 사람이 읽을 수 있는 형태를 지향함
+2. 기본적인 구조는 요청과 응답 모두 동일 구조
    * Start line → 요청과 응답의 형태가 다름.
    * Headers
    * 빈 줄 < 중요함
-   * Body
+   * Body(응답 에서는 body가 필요)
      1. 크기를 알기 어렵다. Headers의 Content-Length 항목 등을 활용한다.
-     2. 위와 다르게 꼭 사람이 읽을 수 있는 텍스트 형태일 필요는 없다. 바이너리 등 가능.
+     2. Start line, Headers는 텍스트지만 body는 아닐 수 있음. 바이너리 등 가능.
      3. 하나가 아니라 여럿일 수도 있다. 파일 업로드 등을 위해 쓰이는 multipart/form-data가 대표적.
 
 #### [HTTP Method](https://developer.mozilla.org/ko/docs/Web/HTTP/Methods) (요청)
 
-1. GET → Read
-2. HEAD → GET without body
-3. POST → Submit (멱등성X) ⇒ Collection Pattern에서 Create로 사용
-4. PUT → Update (+Create) ⇒ Overwrite!
-5. PATCH → Update (partial) (멱등성X)
+1. GET → Read (문서를 읽을때)
+2. HEAD → GET without body (바디 없이 헤드만 읽고싶을때)
+3. POST → Submit (멱등성X) ⇒ Collection Pattern에서 Create로 사용 \
+   멱등성 : 같은 작업을 반복해도 달라지지 않음
+4. PUT → Update (+Create) ⇒ Overwrite! ( 리소스를 전부 바꿔치기 해 줌 : 덮어쓰기 )
+5. PATCH → Update (partial) (멱등성X) (부분적 업데이트 가능)
 6. DELETE → Delete
 7. OPTIONS → 지원 확인
 
 #### [HTTP Status Code](https://developer.mozilla.org/ko/docs/Web/HTTP/Status) (응답)
 
 1. 1xx → 정보 ⇒ 우리가 직접 쓰는 일은 드믐.
-2. 2xx → 성공 ⇒ 200 OK, 201 Created, 204 No Content
-3. 3xx → 리다이렉션 ⇒ 304 Not Modified가 특수한 형태로 자주 보임.
-4. 4xx → 클라이언트 쪽 문제 ⇒ 404 Not Found
-5. 5xx → 서버 쪽 문제 ⇒ 500 Internal Server Error
+2. 2xx → 성공 ⇒ 200 OK, 201 Created(잘 만들어짐), 204 No Content(연결이 되었는데 내용이 없음)
+3. 3xx → 리다이렉션 ⇒ 304 Not Modified가 특수한 형태로 자주 보임. (url 바꿔서 그냥 연결해줌)
+4. 4xx → 클라이언트 쪽 문제 ⇒ 404 Not Found (요청을 잘못함)
+5. 5xx → 서버 쪽 문제 ⇒ 500 Internal Server Error (일명 어쩌라고. 서버가 뭔가 잘못함)
