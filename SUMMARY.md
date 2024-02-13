@@ -8,3 +8,6 @@
   * [HTTP Client](1-http/http-client.md)
   * [HTTP server](1-http/http-server.md)
   * [Java HTTP Server](1-http/java-http-server.md)
+  * [Spring Web MVC](1-http/spring-web-mvc.md)
+* [2주차 REST API](2-rest-api/README.md)
+  * [REST API](2-rest-api/rest-api.md)

@@ -102,7 +102,38 @@ outputStream.flush();
 
 Request 1개 Response 1개씩 메소드화 진행&#x20;
 
-Request 는 displayRequest라는 메소드 생성 후 상태찾는 형태의
+Request 는 displayRequest라는 상태찾는 형태의 아래와 같은  Method를 생성
 
+private static void displayRequest(HttpExchange exchange) throws IOException { //상태찾기 String Method = exchange.getRequestMethod(); System.out.println("Method : " + Method);
 
+```
+    //주소찾기
+    URI uri = exchange.getRequestURI();
+    String path = uri.getPath();
+    System.out.println("Path : " + path);
+
+    Headers Headers = exchange.getRequestHeaders();
+    for (String key : Headers.keySet()) {
+        List<String> values = Headers.get(key);
+        System.out.println(key + ":" + values);
+    }
+
+    InputStream inputStream = exchange.getRequestBody();
+    String body = new String(inputStream.readAllBytes());
+
+    System.out.println(body);
+}
+```
+
+Response는 sendContent라는 컨텐츠를 보내주는 형태의 Method를 생성
+
+private static void sendContent(HttpExchange exchange, String content) throws IOException { byte\[] bytes = content.getBytes();
+
+```
+    exchange.sendResponseHeaders(200, bytes.length);
+
+    OutputStream outputStream = exchange.getResponseBody();
+    outputStream.write(bytes);
+    outputStream.flush();
+```
 
