@@ -24,3 +24,15 @@
     * @ResponseBody
   * @GetMapping
     * @RequestMapping
+
+**Controller**
+
+```java
+@RestController 
+public class WelcomeController { 
+@GetMapping("/") public String home() { 
+return "Hello, world!"; 
+} }
+```
+
+Annotation이 보이면 전부 들어가서 뭔지 확인하는 습관 !
