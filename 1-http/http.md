@@ -60,3 +60,11 @@
 3. 3xx → 리다이렉션 ⇒ 304 Not Modified가 특수한 형태로 자주 보임. (url 바꿔서 그냥 연결해줌)
 4. 4xx → 클라이언트 쪽 문제 ⇒ 404 Not Found (요청을 잘못함)
 5. 5xx → 서버 쪽 문제 ⇒ 500 Internal Server Error (일명 어쩌라고. 서버가 뭔가 잘못함)
+
+**Status Code 요약**
+
+1. 1xx : informational - 리퀘스트를 받아들여 처리중
+2. 2xx : Success - 리퀘스트를 받아들여 정상적으로 처리
+3. 3xx : Redirection - 리퀘스트를 완료하기 위해 추가 동작이 필요함
+4. 4xx : Client error - 리퀘스트를 서버에서 이해 불가능
+5. 5xx : Server error - 리퀘스트를 서버에서 처리 불가능

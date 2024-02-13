@@ -19,6 +19,8 @@ HttpServer httpServer = HttpServer.create(address, backlog);
 
 #### 2️⃣ URL(정확히는 path)에 핸들러 지정
 
+tip. 인터페이스에 메서드가 하나 있는 것들은 람다 사용가능 아래 예시가 람다 사용하는 예시
+
 ```java
 httpServer.createContext("/", (exchange) -> {
 	// TODO
@@ -87,3 +89,14 @@ OutputStream outputStream = exchange.getResponseBody();
 outputStream.write(bytes);
 outputStream.flush();
 ```
+
+&#x20;너무 너저분 하다고 생각이 들었음 .
+
+그 때 바로 아샬님께서 말씀해주시길 현업에서는 명확한 명칭을 가진 메소드화를 시켜야 한다고 하셔서 정말 기초적인 메소드화 진행
+
+Request 1개 Response 1개씩 메소드화 진행&#x20;
+
+Request 는 displayRequest라는 메소드 생성 후 상태찾는 형태의
+
+
+
