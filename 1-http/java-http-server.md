@@ -17,6 +17,10 @@ int backlog = 0;
 HttpServer httpServer = HttpServer.create(address, backlog);
 ```
 
+* HttpServer class 사용시  404error가 떠야 하는데 나는 Connection reset by peer가 계속해서 떠서 이게 뭔가 확인 해봤더니 클라이언트가 요청을 보냈는데 연결이 끊겼다고 서버쪽에서 다시 요청을 보내라는 신호였다.\
+  그래서 찾아보다가 (사실 못찾아서 물어봤음) 알고보니 HttpServer를 사용해야 하는데 HttpsServer를 내가 사용하는 바람에 나온 에러였다.
+* http는 일반 텍스트로 전송하지만 https는 데이터가 암호화 되어서 전송되기 때문에 아직은 배우지 않았지만 아마 어떠한 key를 주고받아야 하는 부분 같다.
+
 #### 2️⃣ URL(정확히는 path)에 핸들러 지정
 
 tip. 인터페이스에 메서드가 하나 있는 것들은 람다 사용가능 아래 예시가 람다 사용하는 예시
@@ -89,6 +93,8 @@ OutputStream outputStream = exchange.getResponseBody();
 outputStream.write(bytes);
 outputStream.flush();
 ```
+
+
 
 &#x20;너무 너저분 하다고 생각이 들었음 .
 
