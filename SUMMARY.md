@@ -13,3 +13,4 @@
   * [REST API](2-rest-api/rest-api.md)
   * [URI & MIME type](2-rest-api/uri-and-mime-type.md)
   * [Collection Pattern](2-rest-api/collection-pattern.md)
+  * [Collection Pattern 적용](2-rest-api/collection-pattern-1.md)
