@@ -34,6 +34,10 @@
 
 [REST](https://ko.wikipedia.org/wiki/REST) (Representational State Transfer)
 
+1. Representational: 표현적인
+2. State: 상태
+3. Transfer: 전송
+
 * 다양한 방식의 버튼 작동방법이 존재하는데 그것을 규약한 방식
 
 #### \[ 제약 조건 ]
